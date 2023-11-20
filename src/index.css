@@ -26,7 +26,7 @@
   }
 
   .card {
-    @apply w-full min-h-[500px] bg-primary py-4 text-current;
+    @apply block w-full min-h-[500px] bg-primary py-4 text-current;
 
     > div:first-child {
       @apply h-4/6 w-11/12 mx-auto flex items-center justify-center;

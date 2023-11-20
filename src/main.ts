@@ -57,7 +57,7 @@ function toggleHeaderVisibility() {
 
   let scrollByLink = false;
   let before = 0;
-  document.addEventListener("scroll", (ev) => {
+  document.addEventListener("scroll", () => {
     const y = document.body.getBoundingClientRect().y;
     if (before < y) {
       // scroll up;
