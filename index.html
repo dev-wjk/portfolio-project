@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/index.css" />
+    <title>JAKE-PORTFOLIO</title>
+  </head>
+  <body>
+    <header
+      class="bg-primary border-b border-neutral-400 fixed top-0 left-0 transition w-full">
+      <div class="container px-4 lg:px-8">
+        <div class="text-end sm:hidden">
+          <i
+            class="mobile-menu-btn fa-solid fa-bars text-3xl cursor-pointer"></i>
+        </div>
+        <nav class="pt-4 pb-4 hidden sm:py-0 sm:flex sm:justify-end">
+          <ul class="flex flex-col sm:flex-row items-end gap-4 sm:gap-10">
+            <li>
+              <a class="nav-link" href="#ABOUT_ME">ABOUT ME</a>
+            </li>
+            <li><a class="nav-link" href="#MY_PROJECTS">MY PROJECTS</a></li>
+            <li><a class="nav-link" href="#CONTACT">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section id="ABOUT_ME">
+      <div
+        class="container px-4 min-h-screen flex flex-col justify-center gap-12 sm:px-32">
+        <h1 class="text-3xl text-primary sm:text-5xl xl:text-7xl">
+          Hello, My name is
+          <span class="text-gradient">Jake</span>
+          <br />
+          I'm a front-end developer
+        </h1>
+        <a
+          class="btn border-cyan-500 w-fit text-2xl bg-gradient bg-clip-text text-transparent"
+          href="#MY_PROJECTS">
+          More about me
+        </a>
+      </div>
+    </section>
+    <section id="MY_PROJECTS" class="bg-gradient">
+      <div
+        class="container px-4 pt-16 pb-8 min-h-screen flex flex-col gap-8 sm:px-8 lg:pb-32 xl:px-16">
+        <h2 class="flex justify-center text-tertiary text-h2">My Projects</h2>
+        <div
+          class="flex-1 grid grid-cols-1 gap-4 sm:grid-rows-2 lg:grid-cols-2">
+          <div class="card">
+            <div></div>
+            <div>
+              <h3>Survey Form</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="card hidden sm:block lg:block">
+            <div></div>
+            <div>
+              <h3>Survey Form</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="card hidden lg:block">
+            <div></div>
+            <div>
+              <h3>Survey Form</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="card hidden lg:block">
+            <div></div>
+            <div>
+              <h3>Survey Form</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="card hidden lg:block">
+            <div></div>
+            <div>
+              <h3>Survey Form</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-end justify-center pt-12 lg:hidden">
+          <div class="mobile-projects-btn btn w-max text-lg">Show all</div>
+        </div>
+      </div>
+    </section>
+    <section id="CONTACT" class="min-h-0">
+      <div
+        class="container px-4 flex flex-col items-center justify-center gap-12 py-16">
+        <h2 class="text-h2">Contact</h2>
+        <div class="flex gap-8">
+          <a href="https://www.freecodecamp.org/dev-jake" target="_blank">
+            <i class="fa-brands fa-free-code-camp text-3xl"></i>
+          </a>
+          <a href="https://github.com/dev-wjk" target="_blank">
+            <i class="fa-brands fa-github text-3xl"></i>
+          </a>
+          <a href="mailto:jake1101dev@gmail.com" target="_blank">
+            <i class="fa-solid fa-at text-3xl"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-current">
+      <div class="container pt-16 px-4">
+        <div class="text-center text-2xl">
+          <a class="inline-block text-tertiary" href="#ABOUT_ME">
+            <i class="fa-solid fa-caret-up"></i>
+          </a>
+        </div>
+
+        <div class="text-secondary text-center p-4">
+          <span>
+            <i class="fa-solid fa-copyright text-xs"></i> 2023 Created by Woo
+            Jake
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
