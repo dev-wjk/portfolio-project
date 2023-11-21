@@ -1,3 +1,108 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  main {
+    @apply flex flex-col min-h-screen;
+  }
+  header {
+    @apply container mx-auto p-8 md:p-16 md:pb-8;
+  }
+  form {
+    @apply container mx-auto p-8 bg-gradient flex-1 flex flex-col gap-8 md:p-16 xl:gap-16;
+
+    input,
+    select,
+    textarea {
+      @apply w-full;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      @apply text-rose-800;
+    }
+
+    section {
+      @apply flex flex-col gap-4;
+
+      h2 {
+        @apply text-2xl font-normal;
+      }
+
+      h2 > span {
+        @apply block w-full text-lg font-normal leading-tight;
+      }
+
+      &:nth-child(1) {
+        ul {
+          @apply flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-x-8;
+
+          li {
+            @apply flex items-center gap-4;
+
+            label {
+              @apply min-w-[70px];
+            }
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        ul {
+          @apply flex flex-col gap-4 md:grid md:grid-cols-3;
+
+          li {
+            @apply flex items-center gap-4;
+          }
+        }
+      }
+
+      &:nth-child(5) {
+        h2 > span > span {
+          @apply font-thin text-base;
+        }
+        ul {
+          @apply flex flex-col gap-4 md:grid md:grid-cols-3;
+
+          li {
+            @apply flex items-center gap-4;
+          }
+        }
+      }
+    }
+
+    div {
+      @apply flex justify-center;
+    }
+    button {
+      @apply border-2 border-rose-300 rounded-full text-rose-900 py-1 px-4 w-max transition hover:bg-rose-300 hover:text-slate-100;
+    }
+  }
+
+  footer {
+    @apply container mx-auto px-8 py-8 text-center;
+
+    hr {
+      @apply mb-1;
+    }
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-br from-slate-600 to-neutral-800 bg-clip-text text-transparent;
+  }
+
+  .bg-gradient {
+    @apply bg-gradient-to-br from-slate-200 to-rose-100;
+  }
+
+  .text-gradient-2 {
+    @apply bg-gradient-to-br from-rose-500 to-slate-600 bg-clip-text text-transparent;
+  }
+}
+
+:root {
+  @apply bg-slate-100 text-neutral-800 font-extralight;
+}
