@@ -282,7 +282,7 @@ function typingEffect(container: Element, typingData: TypingData) {
         const nr = document.createElement("div");
         nr.classList.add(ROW_CLASS);
         container.appendChild(nr);
-        d.colData.forEach((dd, i) => {
+        d.colData.forEach((_, i) => {
           const nc = document.createElement("span");
           nc.classList.add(COL_CLASS);
           if (d.emphasis.includes(i)) nc.classList.add(EMPHASIS);
