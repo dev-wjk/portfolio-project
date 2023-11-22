@@ -5,10 +5,94 @@
     <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/index.css" />
-    <title>JAKE PORTFOLIO</title>
+    <title>dev-jake portfolio</title>
   </head>
   <body>
-    <header
+    <main class="flex flex-col gap-4">
+      <header>
+        <h1>
+          <span>Hello! This is <a href="/">dev-jake</a></span>
+          <br />
+          <span>
+            who likes
+            <b class="js-typing-container">javascript</b>
+          </span>
+        </h1>
+        <section>
+          <div class="js-header-block-desc">
+            <p>My name is <b>Woo Je Kwang</b> and I'm a Korean.</p>
+            <p>
+              I have been working as a <b>front-end developer</b> for 3years.
+              (2020 ~ 2023)
+            </p>
+            <p>
+              What I spend most of my time with is <b>coding</b> and second is
+              <b>English</b>.<br />
+              I usually spend my free time for talking with my friends in
+              English.
+            </p>
+            <p>
+              You can see my <b>web development skills</b> and
+              <b>projects</b> on this site.
+            </p>
+            <p>
+              If you are interested in me, you can contact me via e-mail.
+              <a href="mailto:jake1101dev@gmail.com" target="_blank">
+                jake1101dev@gmail.com
+              </a>
+            </p>
+            <p>Thank you for visiting my site!</p>
+          </div>
+          <div>
+            <i class="js-header-icon-caret fa-solid fa-caret-up"></i>
+          </div>
+          <div>
+            <a href="https://www.freecodecamp.org/dev-jake" target="_blank">
+              <i class="fa-brands fa-free-code-camp"></i>
+            </a>
+            <a href="https://github.com/dev-wjk" target="_blank">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="mailto:jake1101dev@gmail.com" target="_blank">
+              <i class="fa-solid fa-at"></i>
+            </a>
+          </div>
+        </section>
+      </header>
+      <section class="container px-4">
+        <div class="js-slide-container flex gap-4 flex-wrap">
+          <article
+            class="relative w-full h-[500px] bg-[url(/src/image/survey-form-img.png)] bg-no-repeat bg-cover bg-left-top">
+            <a
+              class="rounded-xl h-full bg-slate-300 bg-opacity-60 py-16 px-8 flex flex-col gap-8 items-center justify-center"
+              href="#">
+              <h2 class="font-normal">SurveyForm</h2>
+              <div class="">
+                <i
+                  class="fa-brands fa-html5 bg-slate-700 rounded-lg text-slate-100"></i>
+                <i
+                  class="fa-brands fa-css3 bg-slate-700 rounded-lg text-slate-100"></i>
+              </div>
+            </a>
+          </article>
+          <article
+            class="relative w-full h-[500px] bg-[url(/src/image/survey-form-img.png)] bg-no-repeat bg-cover bg-left-top">
+            <a
+              class="rounded-xl h-full bg-slate-300 bg-opacity-60 py-16 px-8 flex flex-col gap-8 items-center justify-center"
+              href="#">
+              <h2 class="font-normal">SurveyForm</h2>
+              <div class="">
+                <i
+                  class="fa-brands fa-html5 bg-slate-700 rounded-lg text-slate-100"></i>
+                <i
+                  class="fa-brands fa-css3 bg-slate-700 rounded-lg text-slate-100"></i>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+    <!-- <header
       class="bg-primary border-b border-neutral-400 fixed top-0 left-0 transition w-full">
       <div class="container px-4 lg:px-8">
         <div class="text-end sm:hidden">
@@ -49,7 +133,11 @@
         <div
           class="flex-1 grid grid-cols-1 gap-4 sm:grid-rows-2 lg:grid-cols-2">
           <a class="card" href="/static/survey-form/" target="_blank">
-            <div></div>
+            <div>
+              <img
+                src="src/image/survey-form-img.png"
+                alt="survey form that is created by dev-jake" />
+            </div>
             <div>
               <h3>Survey Form</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -131,7 +219,7 @@
           </span>
         </div>
       </div>
-    </footer>
+    </footer> -->
 
     <script type="module" src="/src/main.ts"></script>
   </body>

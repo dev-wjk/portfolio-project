@@ -20,7 +20,134 @@
   */
 @tailwind utilities;
 
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text bg-gradient-to-br from-rose-500 to-slate-500 text-transparent;
+  }
+
+  .bg-gradient {
+    @apply bg-gradient-to-br from-rose-500 to-current;
+  }
+
+  .bg-gradient-2 {
+    @apply bg-gradient-to-br from-current  to-slate-100;
+  }
+}
+
 :root {
+  @apply bg-slate-100 text-slate-700 font-light;
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  h4 {
+    @apply text-lg;
+  }
+
+  p {
+    @apply font-extralight;
+  }
+
+  i[class*="fa"] {
+    @apply h-8 w-8 text-xl leading-8 text-center;
+  }
+}
+
+main {
+  @apply min-h-screen;
+
+  > header {
+    @apply container mx-auto p-4 pb-0 flex flex-col gap-4;
+
+    h1 {
+      @apply animate-expand;
+
+      span {
+        @apply whitespace-nowrap;
+      }
+
+      a {
+        @apply font-normal underline;
+      }
+
+      b {
+        @apply font-normal font-mono text-3xl text-gradient;
+      }
+    }
+
+    section {
+      @apply relative;
+
+      div:first-child {
+        @apply flex flex-col gap-2 h-[300px] overflow-y-scroll transition-[height] duration-300 scrollbar-hide;
+
+        p {
+          @apply leading-tight;
+          b {
+            @apply font-normal;
+          }
+          a {
+            @apply font-normal underline;
+          }
+        }
+      }
+
+      div:nth-child(2) {
+        @apply border-t-2 w-full border-rose-500;
+
+        i {
+          @apply absolute bottom-0 left-1/2 -translate-x-1/2 transition;
+        }
+      }
+
+      div:last-child {
+        @apply flex items-center justify-end gap-1;
+
+        i {
+          @apply my-1 bg-slate-700 rounded-lg text-slate-100;
+        }
+      }
+    }
+
+    .js-hide {
+      @apply !h-0;
+    }
+
+    .js-rotate {
+      @apply rotate-180;
+    }
+
+    .js-typing-container {
+      @apply inline-block;
+    }
+
+    .js-typing-row {
+      @apply inline-block whitespace-nowrap;
+    }
+
+    .js-typing-col {
+      @apply underline;
+    }
+
+    .js-typing-cursor {
+      @apply absolute inline-block w-[1px] bg-slate-700 leading-tight;
+    }
+  }
+
+  > section {
+  }
+}
+
+/* :root {
   @apply scroll-smooth bg-primary text-primary;
 }
 
@@ -76,4 +203,4 @@
   .container {
     @apply mx-auto;
   }
-}
+} */
