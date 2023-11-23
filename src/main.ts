@@ -148,7 +148,6 @@ function headerTypingEffect() {
 function addEfectsToProjects() {
   const container = document.querySelector(".js-slide-container")!;
   const articleList = Array.from(container.querySelectorAll("article"));
-  console.log(articleList);
 }
 
 addEventsForMobile();
@@ -191,10 +190,9 @@ function typingEffect(container: Element, typingData: TypingData) {
     // to start typing when container is not empty
     if (!container.textContent?.replace(REG_EXP, "")) {
       setTimeout(() => {
-        type(typingData[idx]).then(() => {
+        type(typingData[idx++]).then(() => {
           start();
         });
-        idx++;
       }, WAIT_TYPE);
 
       // reset typingData to the first when the data reach to the last
@@ -255,9 +253,8 @@ function typingEffect(container: Element, typingData: TypingData) {
 
           // force to stop loop
           if (!cols[0].textContent!.length) {
-            // append space to the first of collum for cursor positioning
-            cursor.after(SPACE);
             // add blink animation to cursor
+            container.append(cursor);
             cursor.classList.add(BLINK);
             resolve(0);
             return;
@@ -310,8 +307,7 @@ function typingEffect(container: Element, typingData: TypingData) {
             : cursor.classList.remove(EMPHASIS);
 
           row.appendChild(cursor);
-
-          col.append(data[r]["colData"][c][i]);
+          col.textContent += data[r]["colData"][c][i];
 
           i++;
 
