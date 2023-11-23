@@ -176,7 +176,6 @@ function typingEffect(container: Element, typingData: TypingData) {
   cursor.classList.add(CURSOR_CLASS, BLINK);
   cursor.append(SPACE);
   container.appendChild(cursor);
-  cursor.after(SPACE);
 
   let idx = 0;
   function start() {
@@ -215,7 +214,7 @@ function typingEffect(container: Element, typingData: TypingData) {
           nr.classList.add(ROW_CLASS);
           const nc = document.createElement("span");
           nc.classList.add(COL_CLASS);
-          nc.append(container.textContent);
+          nc.append(container.textContent.trim());
           nr.appendChild(nc);
           nr.appendChild(cursor);
 

@@ -2,37 +2,9 @@
 @import url(/src/fontawesome/css/brands.css);
 @import url(/src/fontawesome/css/solid.css);
 
-/**
- * This injects Tailwind's base styles and any base styles registered by
- * plugins.
- */
 @tailwind base;
-
-/**
-  * This injects Tailwind's component classes and any component classes
-  * registered by plugins.
-  */
 @tailwind components;
-
-/**
-  * This injects Tailwind's utility classes and any utility classes registered
-  * by plugins.
-  */
 @tailwind utilities;
-
-@layer utilities {
-  .text-gradient {
-    @apply bg-clip-text bg-gradient-to-br from-rose-500 to-slate-500 text-transparent;
-  }
-
-  .bg-gradient {
-    @apply bg-gradient-to-br from-rose-500 to-current;
-  }
-
-  .bg-gradient-2 {
-    @apply bg-gradient-to-br from-current  to-slate-100;
-  }
-}
 
 :root {
   @apply bg-slate-100 text-slate-700 font-light;
@@ -62,88 +34,152 @@
   }
 }
 
-main {
-  @apply min-h-screen;
+.text-gradient {
+  @apply bg-clip-text bg-gradient-to-br from-rose-500 to-slate-500 text-transparent;
+}
 
-  > header {
-    @apply container mx-auto p-4 pb-0 flex flex-col gap-4;
+.bg-gradient {
+  @apply bg-gradient-to-br from-rose-500 to-current;
+}
 
-    h1 {
-      @apply animate-expand;
+.body-container {
+  @apply lg:px-8 lg:pt-8;
+}
 
-      span {
-        @apply whitespace-nowrap;
+header {
+  @apply container mx-auto p-4 lg:grid lg:grid-cols-2 lg:mb-8;
+
+  .js-hide {
+    @apply !h-0 lg:!h-max;
+  }
+
+  .js-rotate {
+    @apply rotate-180;
+  }
+
+  .js-typing-container {
+    @apply inline-block;
+  }
+
+  .js-typing-row {
+    @apply inline-block whitespace-nowrap;
+  }
+
+  .js-typing-col {
+    @apply underline;
+  }
+
+  .js-typing-cursor {
+    @apply absolute inline-block w-[2px] bg-slate-700 leading-tight text-3xl;
+  }
+}
+
+header > h1 {
+  @apply animate-expand mb-4 lg:flex lg:flex-col lg:justify-center lg:items-center;
+
+  span {
+    @apply whitespace-nowrap;
+  }
+
+  a {
+    @apply font-normal underline;
+  }
+
+  b {
+    @apply font-normal font-mono text-3xl text-gradient;
+  }
+}
+
+header > section {
+  @apply relative;
+
+  div:first-child {
+    @apply flex flex-col gap-2 h-[300px] overflow-y-scroll transition-[height] duration-300 scrollbar-hide lg:h-max;
+
+    p {
+      @apply leading-tight;
+      b {
+        @apply font-normal;
       }
-
       a {
         @apply font-normal underline;
       }
-
-      b {
-        @apply font-normal font-mono text-3xl text-gradient;
-      }
-    }
-
-    section {
-      @apply relative;
-
-      div:first-child {
-        @apply flex flex-col gap-2 h-[300px] overflow-y-scroll transition-[height] duration-300 scrollbar-hide;
-
-        p {
-          @apply leading-tight;
-          b {
-            @apply font-normal;
-          }
-          a {
-            @apply font-normal underline;
-          }
-        }
-      }
-
-      div:nth-child(2) {
-        @apply border-t-2 w-full border-rose-500;
-
-        i {
-          @apply absolute bottom-0 left-1/2 -translate-x-1/2 transition;
-        }
-      }
-
-      div:last-child {
-        @apply flex items-center justify-end gap-1;
-
-        i {
-          @apply my-1 bg-slate-700 rounded-lg text-slate-100;
-        }
-      }
-    }
-
-    .js-hide {
-      @apply !h-0;
-    }
-
-    .js-rotate {
-      @apply rotate-180;
-    }
-
-    .js-typing-container {
-      @apply inline-block;
-    }
-
-    .js-typing-row {
-      @apply inline-block whitespace-nowrap;
-    }
-
-    .js-typing-col {
-      @apply underline;
-    }
-
-    .js-typing-cursor {
-      @apply absolute inline-block w-[1px] bg-slate-700 leading-tight;
     }
   }
 
-  > section {
+  div:nth-child(2) {
+    @apply border-t-2 w-full border-rose-500 lg:mt-4;
+
+    i {
+      @apply absolute bottom-0 left-1/2 -translate-x-1/2 transition lg:hidden;
+    }
+  }
+
+  div:last-child {
+    @apply flex items-center justify-end gap-1 lg:justify-start;
+
+    i {
+      @apply my-1 bg-slate-700 rounded-lg text-slate-100;
+    }
+  }
+}
+
+main {
+  @apply container p-4 mx-auto;
+}
+
+main > section {
+  @apply mb-8 lg:mb-16;
+}
+
+main > section:nth-of-type(1) > div {
+  @apply flex gap-4 flex-wrap;
+
+  article {
+    @apply relative w-full h-[300px] bg-[url(/src/image/survey-form-img.png)] bg-no-repeat bg-cover bg-left-top lg:h-[500px];
+
+    a {
+      @apply rounded-xl h-full bg-slate-300 bg-opacity-60 py-16 px-8 flex flex-col gap-8 items-center justify-center;
+
+      h3 {
+        @apply font-normal;
+      }
+
+      div {
+        i {
+          @apply bg-slate-700 rounded-lg text-slate-100;
+        }
+      }
+    }
+  }
+}
+
+main > section:not(:nth-of-type(1)) {
+  h2 {
+    @apply mb-4 border-b border-rose-500;
+  }
+
+  div {
+    @apply grid grid-flow-row grid-cols-4 justify-items-center gap-1 lg:gap-8;
+
+    article {
+      @apply flex flex-col items-center justify-center w-[72px];
+
+      img {
+        @apply block border rounded-t-lg h-[72px] w-full object-cover;
+      }
+
+      span {
+        @apply block text-center whitespace-nowrap;
+      }
+    }
+  }
+}
+
+footer {
+  @apply flex items-center justify-center p-4 border-t mt-8;
+  span {
+    @apply text-gradient;
   }
 }
 

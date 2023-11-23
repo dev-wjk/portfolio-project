@@ -8,11 +8,10 @@
     <title>dev-jake portfolio</title>
   </head>
   <body>
-    <main class="flex flex-col gap-4">
+    <div class="body-container">
       <header>
         <h1>
           <span>Hello! This is <a href="/">dev-jake</a></span>
-          <br />
           <span>
             who likes
             <b class="js-typing-container">javascript</b>
@@ -59,39 +58,122 @@
           </div>
         </section>
       </header>
-      <section class="container px-4">
-        <div class="js-slide-container flex gap-4 flex-wrap">
-          <article
-            class="relative w-full h-[500px] bg-[url(/src/image/survey-form-img.png)] bg-no-repeat bg-cover bg-left-top">
-            <a
-              class="rounded-xl h-full bg-slate-300 bg-opacity-60 py-16 px-8 flex flex-col gap-8 items-center justify-center"
-              href="#">
-              <h2 class="font-normal">SurveyForm</h2>
-              <div class="">
-                <i
-                  class="fa-brands fa-html5 bg-slate-700 rounded-lg text-slate-100"></i>
-                <i
-                  class="fa-brands fa-css3 bg-slate-700 rounded-lg text-slate-100"></i>
-              </div>
-            </a>
-          </article>
-          <article
-            class="relative w-full h-[500px] bg-[url(/src/image/survey-form-img.png)] bg-no-repeat bg-cover bg-left-top">
-            <a
-              class="rounded-xl h-full bg-slate-300 bg-opacity-60 py-16 px-8 flex flex-col gap-8 items-center justify-center"
-              href="#">
-              <h2 class="font-normal">SurveyForm</h2>
-              <div class="">
-                <i
-                  class="fa-brands fa-html5 bg-slate-700 rounded-lg text-slate-100"></i>
-                <i
-                  class="fa-brands fa-css3 bg-slate-700 rounded-lg text-slate-100"></i>
-              </div>
-            </a>
-          </article>
-        </div>
-      </section>
-    </main>
+      <main>
+        <section>
+          <h2 class="mb-4 border-b border-rose-500">Projects</h2>
+          <div class="js-slide-container">
+            <article>
+              <a href="/static/survey-form/" target="_blank">
+                <h3>SurveyForm</h3>
+                <div>
+                  <i class="fa-brands fa-html5"></i>
+                  <i class="fa-brands fa-css3"></i>
+                </div>
+              </a>
+            </article>
+          </div>
+        </section>
+        <section>
+          <h2>Front-end stack</h2>
+          <div>
+            <article>
+              <img src="/src/image/stack-logo/html-logo.png" alt="html logo" />
+              <span>html</span>
+            </article>
+            <article>
+              <img
+                class="!object-contain"
+                src="/src/image/stack-logo/css-logo.png"
+                alt="css logo" />
+              <span>css</span>
+            </article>
+            <article>
+              <img
+                src="/src/image/stack-logo/js-logo.jpg"
+                alt="javascript logo" />
+              <span>javascript</span>
+            </article>
+            <article>
+              <img
+                class="!object-contain"
+                src="/src/image/stack-logo/jquery-logo.jpg"
+                alt="jquery logo" />
+              <span>jquery</span>
+            </article>
+            <article>
+              <img
+                src="/src/image/stack-logo/react-logo.jpg"
+                alt="react logo" />
+              <span>react</span>
+            </article>
+            <article>
+              <img
+                src="/src/image/stack-logo/gatsby-logo.jpg"
+                alt="gatsby logo" />
+              <span>gatsby</span>
+            </article>
+            <article>
+              <img src="/src/image/stack-logo/vue-logo.jpg" alt="vue logo" />
+              <span>vue</span>
+            </article>
+            <article>
+              <img
+                src="/src/image/stack-logo/angular-logo.jpg"
+                alt="angular logo" />
+              <span>angular</span>
+            </article>
+            <article>
+              <img
+                src="/src/image/stack-logo/typescript-logo.jpg"
+                alt="typescript logo" />
+              <span>typescript</span>
+            </article>
+          </div>
+        </section>
+        <section>
+          <h2>Back-end stack</h2>
+          <div>
+            <article>
+              <img
+                class="!object-contain"
+                src="/src/image/stack-logo/express-logo.png"
+                alt="express logo" />
+              <span>express</span>
+            </article>
+            <article>
+              <img
+                src="/src/image/stack-logo/springboot-logo.jpg"
+                alt="springboot logo" />
+              <span>spring boot</span>
+            </article>
+          </div>
+        </section>
+        <section>
+          <h2>Build tool</h2>
+          <div>
+            <article>
+              <img
+                class="!object-contain"
+                src="/src/image/stack-logo/vite-logo.jpg"
+                alt="vite logo" />
+              <span>vite</span>
+            </article>
+            <article>
+              <img
+                class="!object-contain"
+                src="/src/image/stack-logo/webpack-logo.png"
+                alt="webpack logo" />
+              <span>webpack</span>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>&copy; 2023 Created by dev-jake</span>
+      </footer>
+    </div>
+
     <!-- <header
       class="bg-primary border-b border-neutral-400 fixed top-0 left-0 transition w-full">
       <div class="container px-4 lg:px-8">
