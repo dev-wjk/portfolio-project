@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 :root {
-  @apply bg-slate-100 text-slate-700 font-light dark:bg-neutral-700 dark:text-slate-200;
+  @apply bg-slate-100 text-slate-700 font-light;
 
   h1 {
     @apply text-4xl;
@@ -43,7 +43,7 @@
 }
 
 .body-container {
-  @apply lg:px-8 lg:pt-8;
+  @apply lg:px-8 lg:pt-8 transition;
 }
 
 header {
@@ -71,6 +71,26 @@ header {
 
   .js-typing-cursor {
     @apply absolute inline-block w-[2px] bg-slate-700 leading-tight text-3xl;
+  }
+
+  .js-theme-toggle {
+    @apply border rounded-full w-12 h-6 relative;
+  }
+
+  .js-theme-sphere {
+    @apply rounded-full w-4 h-4 bg-current absolute left-1 top-1/2 -translate-y-1/2 transition;
+  }
+}
+
+header > div {
+  @apply p-4 pt-0 text-center flex items-center justify-end gap-2;
+
+  i {
+    @apply text-current transition;
+
+    &.js-is-active {
+      @apply text-gradient;
+    }
   }
 }
 
@@ -119,7 +139,7 @@ header > section {
     @apply flex items-center justify-end gap-1 lg:justify-start;
 
     i {
-      @apply my-1 bg-slate-700 rounded-lg text-slate-100 dark:bg-neutral-600;
+      @apply my-1 bg-slate-700 rounded-lg text-slate-100 transition;
     }
   }
 }
@@ -140,13 +160,13 @@ main > section {
   @apply flex gap-4 flex-wrap;
 
   article {
-    @apply relative w-full h-[300px] bg-[url(/src/image/survey-form-img.png)] bg-no-repeat bg-cover bg-left-top lg:h-[500px];
+    @apply relative w-full h-[300px] rounded-xl bg-[url(/src/image/survey-form-img.png)] bg-no-repeat bg-cover bg-left-top lg:h-[500px];
 
     a {
-      @apply rounded-xl h-full bg-slate-300 bg-opacity-60 py-16 px-8 flex flex-col gap-8 items-center justify-center;
+      @apply rounded-xl h-full bg-slate-300 !bg-opacity-60 py-16 px-8 flex flex-col gap-8 items-center justify-center;
 
       h3 {
-        @apply font-normal text-neutral-600;
+        @apply font-normal;
       }
     }
   }
@@ -164,7 +184,7 @@ main > section {
       }
 
       span {
-        @apply block text-center whitespace-nowrap;
+        @apply text-center whitespace-nowrap;
       }
     }
   }
@@ -176,7 +196,7 @@ main > section {
   }
 
   article {
-    @apply border rounded p-4 dark:border-neutral-600;
+    @apply border rounded p-4 transition;
 
     & > div:nth-of-type(1) {
       @apply mb-4 leading-tight;
