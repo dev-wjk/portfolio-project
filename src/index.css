@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 :root {
-  @apply bg-slate-100 text-slate-700 font-light;
+  @apply font-light;
 
   color-scheme: light dark;
 
@@ -233,8 +233,14 @@ footer {
   }
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
+  :root {
+    @apply bg-slate-100 text-slate-700;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
   :root {
     @apply bg-neutral-700 text-slate-200;
   }
-} */
+}
