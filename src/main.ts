@@ -160,20 +160,16 @@ function colorSchemeControl() {
   container?.addEventListener("click", (ev) => {
     if (ev?.target instanceof Element) {
       if (ev.target.classList.contains("fa-sun")) {
-        document.body.style.colorScheme = "light";
         sun?.classList.add(IS_ACTIVE);
         moon?.classList.remove(IS_ACTIVE);
         elements.forEach((el, i) => el.classList.remove(...classList[i]));
-
         return;
       }
 
       if (ev.target.classList.contains("fa-moon")) {
-        document.body.style.colorScheme = "dark";
         moon?.classList.add(IS_ACTIVE);
         sun?.classList.remove(IS_ACTIVE);
         elements.forEach((el, i) => el.classList.add(...classList[i]));
-
         return;
       }
     }
