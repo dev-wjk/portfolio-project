@@ -235,7 +235,7 @@ footer {
 
 @media (prefers-color-scheme: light) {
   :root {
-    @apply bg-slate-100 text-slate-700;
+    @apply !bg-slate-100 !text-slate-700;
   }
 }
 
