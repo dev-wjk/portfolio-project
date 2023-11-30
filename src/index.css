@@ -231,8 +231,8 @@ footer {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     @apply bg-neutral-700 text-slate-200;
   }
-}
+} */
