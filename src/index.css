@@ -74,14 +74,6 @@ header {
   .js-typing-cursor {
     @apply absolute inline-block w-[2px] bg-rose-500 leading-tight text-3xl;
   }
-
-  .js-theme-toggle {
-    @apply border rounded-full w-12 h-6 relative;
-  }
-
-  .js-theme-sphere {
-    @apply rounded-full w-4 h-4 bg-current absolute left-1 top-1/2 -translate-y-1/2 transition;
-  }
 }
 
 header > div:nth-child(1) {
