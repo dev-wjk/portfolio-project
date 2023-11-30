@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 :root {
-  @apply font-light;
+  @apply !bg-slate-100 !text-slate-700 font-light;
 
   color-scheme: light dark;
 
