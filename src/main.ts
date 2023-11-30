@@ -115,7 +115,7 @@ function addEventsForMobile() {
   caret?.click();
 }
 
-function headerTypingEffect() {
+function addTypingEffect() {
   const typingData = [
     [
       {
@@ -186,7 +186,7 @@ function colorSchemeControl() {
 }
 
 addEventsForMobile();
-headerTypingEffect();
+addTypingEffect();
 addEfectsToProjects();
 colorSchemeControl();
 
