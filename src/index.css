@@ -9,6 +9,8 @@
 :root {
   @apply bg-slate-100 text-slate-700 font-light;
 
+  color-scheme: light dark;
+
   h1 {
     @apply text-4xl;
   }
