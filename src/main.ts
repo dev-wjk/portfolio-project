@@ -145,10 +145,7 @@ function addTypingEffect() {
   typingEffect(document.querySelector(".js-typing-container")!, typingData);
 }
 
-function addEfectsToProjects() {
-  const container = document.querySelector(".js-slide-container")!;
-  const articleList = Array.from(container.querySelectorAll("article"));
-}
+function addEfectsToProjects() {}
 
 function colorSchemeControl() {
   const IS_ACTIVE = "js-is-active";
