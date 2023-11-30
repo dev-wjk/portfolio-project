@@ -47,7 +47,7 @@
 }
 
 header {
-  @apply container mx-auto p-4 lg:grid lg:grid-cols-2 lg:mb-8;
+  @apply container mx-auto p-4 lg:mb-8;
 
   .js-hide {
     @apply !h-0 lg:!h-max;
@@ -82,8 +82,8 @@ header {
   }
 }
 
-header > div {
-  @apply p-4 pt-0 text-center flex items-center justify-end gap-2;
+header > div:nth-child(1) {
+  @apply mb-8 text-center flex items-center justify-end gap-2 lg:justify-center;
 
   i {
     @apply text-current transition;
@@ -94,52 +94,56 @@ header > div {
   }
 }
 
-header > h1 {
-  @apply animate-expand mb-4 lg:flex lg:flex-col lg:justify-center lg:items-center;
+header > div:nth-child(2) {
+  @apply lg:grid lg:grid-flow-col lg:grid-cols-2;
 
-  span {
-    @apply whitespace-nowrap;
-  }
+  h1 {
+    @apply animate-expand mb-4 lg:flex lg:flex-col lg:justify-center lg:items-center;
 
-  a {
-    @apply font-normal underline;
-  }
+    span {
+      @apply whitespace-nowrap;
+    }
 
-  b {
-    @apply font-normal font-mono text-3xl text-gradient;
-  }
-}
+    a {
+      @apply font-normal underline;
+    }
 
-header > section {
-  @apply relative;
-
-  div:first-child {
-    @apply flex flex-col gap-2 h-[300px] overflow-y-scroll transition-[height] duration-300 scrollbar-hide lg:h-max;
-
-    p {
-      @apply leading-tight;
-      b {
-        @apply font-normal;
-      }
-      a {
-        @apply font-normal underline;
-      }
+    b {
+      @apply font-normal font-mono text-3xl text-gradient;
     }
   }
 
-  div:nth-child(2) {
-    @apply border-t-2 w-full border-rose-500 lg:mt-4;
+  section {
+    @apply relative;
 
-    i {
-      @apply absolute bottom-0 left-1/2 -translate-x-1/2 transition lg:hidden;
+    div:first-child {
+      @apply flex flex-col gap-2 h-[300px] overflow-y-scroll transition-[height] duration-300 scrollbar-hide lg:h-max;
+
+      p {
+        @apply leading-tight;
+        b {
+          @apply font-normal;
+        }
+        a {
+          @apply font-normal underline;
+        }
+      }
     }
-  }
 
-  div:last-child {
-    @apply flex items-center justify-end gap-1 lg:justify-start;
+    div:nth-child(2) {
+      @apply border-t-2 w-full border-rose-500 lg:mt-4;
 
-    i {
-      @apply my-1 bg-slate-700 rounded-lg text-slate-100 transition;
+      i {
+        @apply absolute bottom-0 left-1/2 -translate-x-1/2 transition lg:hidden;
+      }
+    }
+
+    div:last-child {
+      @apply flex items-center justify-end gap-1 lg:justify-start;
+
+      i {
+        @apply my-1 bg-slate-700 rounded-lg text-slate-100 transition;
+      }
     }
   }
 }
@@ -163,7 +167,7 @@ main > section {
     @apply relative w-full h-[300px] rounded-xl bg-[url(/src/image/survey-form-img.png)] bg-no-repeat bg-cover bg-left-top lg:h-[500px];
 
     a {
-      @apply rounded-xl h-full bg-slate-300 !bg-opacity-60 py-16 px-8 flex flex-col gap-8 items-center justify-center;
+      @apply rounded-xl h-full bg-slate-300 !bg-opacity-90 py-16 px-8 flex flex-col gap-8 items-center justify-center;
 
       h3 {
         @apply font-normal;
@@ -196,7 +200,7 @@ main > section {
   }
 
   article {
-    @apply border rounded p-4 transition;
+    @apply border rounded-xl p-4 transition;
 
     & > div:nth-of-type(1) {
       @apply mb-4 leading-tight;
