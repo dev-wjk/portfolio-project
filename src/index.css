@@ -81,7 +81,7 @@ header {
 }
 
 header > div:nth-child(1) {
-  @apply mb-8 text-center flex items-center justify-end gap-2 lg:justify-center;
+  @apply mb-8 text-center flex items-center justify-end gap-2 lg:justify-center lg:mb-0;
 
   i {
     @apply text-current transition;
@@ -93,7 +93,7 @@ header > div:nth-child(1) {
 }
 
 header > div:nth-child(2) {
-  @apply lg:grid lg:grid-flow-col lg:grid-cols-2;
+  @apply lg:grid lg:grid-flow-col lg:grid-cols-2 lg:h-[80vh];
 
   h1 {
     @apply animate-expand mb-4 lg:flex lg:flex-col lg:justify-center lg:items-center;
@@ -112,7 +112,7 @@ header > div:nth-child(2) {
   }
 
   section {
-    @apply relative;
+    @apply relative lg:flex lg:flex-col lg:justify-center;
 
     div:first-child {
       @apply flex flex-col gap-2 h-[300px] overflow-y-scroll transition-[height] duration-300 scrollbar-hide lg:h-max;
