@@ -48,6 +48,10 @@
   @apply lg:px-8 lg:pt-8 transition;
 }
 
+article.js-is-shown {
+  @apply !opacity-100;
+}
+
 header {
   @apply container mx-auto p-4 lg:mb-8;
 
