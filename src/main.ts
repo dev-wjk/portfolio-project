@@ -57,7 +57,6 @@ function addTransition() {
   );
 
   sectionList.forEach((el) => obs.observe(el));
-  console.log(sectionList);
 }
 
 function addEventsForMobile() {
