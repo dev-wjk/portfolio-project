@@ -11,18 +11,6 @@ export default defineConfig({
           __dirname,
           "static/survey-form/index.html"
         ),
-        "static/tribute-page": resolve(
-          __dirname,
-          "static/tribute-page/index.html"
-        ),
-        "static/technical-doc": resolve(
-          __dirname,
-          "static/technical-doc/index.html"
-        ),
-        "static/product-landing-page": resolve(
-          __dirname,
-          "static/product-landing-page/index.html"
-        ),
       },
     },
   },
