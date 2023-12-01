@@ -31,7 +31,7 @@
     @apply font-extralight;
   }
 
-  i[class*="fa"] {
+  i[class*='fa'] {
     @apply h-8 w-8 text-xl leading-8 text-center;
   }
 }
@@ -151,7 +151,7 @@ main {
 }
 
 main > section {
-  @apply mb-8 lg:mb-16;
+  @apply mb-8 lg:mb-16 xl:mb-32;
 
   h2 {
     @apply mb-4 border-b border-rose-500;
@@ -162,7 +162,7 @@ main > section {
   @apply flex gap-4 flex-wrap;
 
   article {
-    @apply relative w-full h-[300px] rounded-xl bg-[url(/src/image/survey-form-img.png)] bg-no-repeat bg-cover bg-left-top lg:h-[500px];
+    @apply relative w-full h-[300px] rounded-xl bg-no-repeat bg-cover bg-left-top lg:h-[500px];
 
     a {
       @apply rounded-xl h-full bg-slate-300 !bg-opacity-90 py-16 px-8 flex flex-col gap-8 items-center justify-center;
