@@ -27,9 +27,17 @@ function colorSchemeControl() {
     }
   });
 
-  window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)')
-    ? moon?.classList.add(IS_ACTIVE)
-    : sun?.classList.add(IS_ACTIVE);
+  if (
+    localStorage.getItem('color-theme') === 'dark' ||
+    (!('color-theme' in localStorage) &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    document.documentElement.classList.add('dark');
+    moon?.classList.add(IS_ACTIVE);
+  } else {
+    document.documentElement.classList.remove('dark');
+    sun?.classList.add(IS_ACTIVE);
+  }
 }
 
 function addTransition() {
