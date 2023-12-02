@@ -92,7 +92,7 @@ main > section {
 
 .projects-container > div {
   article {
-    @apply relative w-full h-[300px] rounded-xl bg-no-repeat bg-cover bg-left-top lg:h-[500px];
+    @apply relative w-full h-[300px] rounded-xl bg-no-repeat bg-cover bg-center lg:h-[500px];
 
     a {
       @apply rounded-xl h-full bg-slate-300 !bg-opacity-90 py-16 px-8 flex flex-col gap-8 items-center justify-center;
