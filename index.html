@@ -4,79 +4,121 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="light dark">
+    <meta name="color-scheme" content="light dark" />
     <link rel="stylesheet" href="src/index.css" />
     <title>dev-jake portfolio</title>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+        console.log(1);
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
   </head>
-  <body>
+  <body class="lg:px-8 lg:pt-8 transition">
     <div class="body-container dark:!bg-neutral-700 dark:!text-slate-200">
-      <header>
-        <div class="js-color-scheme">
-          <i class="fa-solid fa-sun js-color-scheme-icon"></i>
-          <i class="fa-solid fa-moon js-color-scheme-icon"></i>
+      <header class="container mx-auto p-4 lg:mb-8">
+        <div
+          class="js-color-scheme mb-8 text-center flex items-center justify-end gap-2 lg:justify-center xl:mb-0">
+          <i
+            class="fa-solid fa-sun js-color-scheme-icon text-current transition"></i>
+          <i
+            class="fa-solid fa-moon js-color-scheme-icon text-current transition"></i>
         </div>
-        <div>
-          <h1>
-            <span>Hello! This is <a href="/">dev-jake</a></span>
-            <span>
+        <div class="lg:grid lg:grid-flow-col lg:grid-cols-2 xl:h-[80vh]">
+          <h1
+            class="animate-expand mb-4 lg:flex lg:flex-col lg:justify-center lg:items-center">
+            <span class="whitespace-nowrap">
+              Hello! This is
+              <a class="font-normal underline" href="/">dev-jake</a>
+            </span>
+            <span class="whitespace-nowrap">
               who likes
-              <b class="js-typing-container">javascript</b>
+              <b
+                class="js-typing-container font-normal font-mono text-3xl text-gradient">
+                javascript
+              </b>
             </span>
           </h1>
-          <section>
-            <div class="js-header-block-desc">
-              <p>My name is <b>Woo Je Kwang</b> and I'm a Korean.</p>
-              <p>
-                I had been working as a <b>front-end developer</b> for 3years.
-                (2020 ~ 2023)
+          <section class="relative xl:flex xl:flex-col xl:justify-center">
+            <div
+              class="js-header-block-desc flex flex-col gap-2 h-[300px] overflow-y-scroll transition-[height] duration-300 scrollbar-hide lg:h-max">
+              <p class="leading-tight">
+                My name is <b class="font-normal">Woo Je Kwang</b> and I'm a
+                Korean.
               </p>
-              <p>
-                What I spend most of my time with is <b>coding</b> and second is
-                <b>English</b>.<br />
+              <p class="leading-tight">
+                I had been working as a
+                <b class="font-normal">front-end developer</b> for 3years. (2020
+                ~ 2023)
+              </p>
+              <p class="leading-tight">
+                What I spend most of my time with is
+                <b class="font-normal">coding</b> and second is
+                <b class="font-normal">English</b>.<br />
                 I usually spend my free time for talking with my friends in
                 English.
               </p>
-              <p>
-                You can see my <b>web development skills</b> and
-                <b>projects</b> on this site.
+              <p class="leading-tight">
+                You can see my
+                <b class="font-normal">web development skills</b> and
+                <b class="font-normal">projects</b> on this site.
               </p>
-              <p>
+              <p class="leading-tight">
                 If you are interested in me, you can contact me via e-mail.
-                <a href="mailto:jake1101dev@gmail.com" target="_blank">
+                <a
+                  class="font-normal underline"
+                  href="mailto:jake1101dev@gmail.com"
+                  target="_blank">
                   jake1101dev@gmail.com
                 </a>
               </p>
-              <p>Thank you for visiting my site!</p>
+              <p class="leading-tight">Thank you for visiting my site!</p>
             </div>
-            <div>
-              <i class="js-header-icon-caret fa-solid fa-caret-up"></i>
+            <div class="border-t-2 w-full border-rose-500 lg:mt-4">
+              <i
+                class="fa-solid fa-caret-up js-header-icon-caret absolute bottom-0 left-1/2 -translate-x-1/2 animate-blink2 transition lg:hidden"></i>
             </div>
-            <div>
+            <div class="flex items-center justify-end gap-1 lg:justify-start">
               <a href="https://www.freecodecamp.org/dev-jake" target="_blank">
-                <i class="fa-brands fa-free-code-camp dark:!bg-neutral-600"></i>
+                <i
+                  class="fa-brands fa-free-code-camp my-1 bg-slate-700 rounded-lg text-slate-100 transition dark:!bg-neutral-600"></i>
               </a>
               <a href="https://github.com/dev-wjk" target="_blank">
-                <i class="fa-brands fa-github dark:!bg-neutral-600"></i>
+                <i
+                  class="fa-brands fa-github my-1 bg-slate-700 rounded-lg text-slate-100 transition dark:!bg-neutral-600"></i>
               </a>
               <a href="mailto:jake1101dev@gmail.com" target="_blank">
-                <i class="fa-solid fa-at dark:!bg-neutral-600"></i>
+                <i
+                  class="fa-solid fa-at my-1 bg-slate-700 rounded-lg text-slate-100 transition dark:!bg-neutral-600"></i>
               </a>
             </div>
           </section>
         </div>
-        
       </header>
-      <main>
+      <main class="container p-4 mx-auto">
         <section class="projects-container">
           <h2>Projects</h2>
-          <div class="js-slide-container">
+          <div class="js-slide-container flex gap-4 flex-wrap">
             <article class="bg-[url(/src/image/survey-form-img.png)]">
-              <a class="dark:!bg-neutral-900" href="/static/survey-form/" target="_blank">
+              <a
+                class="dark:!bg-neutral-900"
+                href="/static/survey-form/"
+                target="_blank">
                 <h3>SurveyForm</h3>
               </a>
             </article>
             <article class="bg-[url(/src/image/tour-of-heroes.png)]">
-              <a class="dark:!bg-neutral-900" href="%VITE_TOUR_OF_HEROES_URL%" target="_blank">
+              <a
+                class="dark:!bg-neutral-900"
+                href="%VITE_TOUR_OF_HEROES_URL%"
+                target="_blank">
                 <h3>Tour of heroes</h3>
               </a>
             </article>
@@ -178,7 +220,7 @@
         </section>
         <section class="resume-container">
           <h2>Resume</h2>
-          <div>
+          <div class="grid grid-flow-row gap-4 lg:grid-cols-2">
             <article class="dark:!border-neutral-600">
               <div>
                 <h3>제일제강 관리자 페이지 개발</h3>
@@ -186,7 +228,8 @@
               </div>
               <div>
                 <div>프론트엔드 개발자 / 주니어</div>
-                <div>개발 언어: 
+                <div>
+                  개발 언어:
                   <b>java spring / javascript / mysql</b>
                 </div>
               </div>
@@ -202,15 +245,13 @@
               </div>
               <div>
                 <div>프론트엔드 개발자 / 주니어</div>
-                <div>개발 언어: <b>python / java spring / javascript / mysql</b></div>
+                <div>
+                  개발 언어: <b>python / java spring / javascript / mysql</b>
+                </div>
               </div>
               <ul>
-                <li>
-                  AI 모델 (python)이 차량 손상 탐지
-                </li>
-                <li>
-                  웹페이지에서 차량 손상 탐지 데이터 표출
-                </li>
+                <li>AI 모델 (python)이 차량 손상 탐지</li>
+                <li>웹페이지에서 차량 손상 탐지 데이터 표출</li>
                 <li>
                   차량 사진에 번호판, 덴트, 스크래치 등 손상 탐지 위치 표시
                 </li>
@@ -226,7 +267,9 @@
                 <div>개발 언어: <b>typescript</b></div>
               </div>
               <ul>
-                <li>입주민 인바디 검사 결과 그래프 형식으로 데이터 표출 화면 개발</li>
+                <li>
+                  입주민 인바디 검사 결과 그래프 형식으로 데이터 표출 화면 개발
+                </li>
                 <li>입주민에게 제공할 서비스 관리 페이지 유지보수</li>
               </ul>
             </article>
@@ -237,12 +280,19 @@
               </div>
               <div>
                 <div>풀스택 개발자 / 주니어</div>
-                <div>개발 언어: <b>python / springboot / typescript / mysql</b></div>
+                <div>
+                  개발 언어: <b>python / springboot / typescript / mysql</b>
+                </div>
               </div>
               <ul>
-                <li>Netty framework 와 Springboot 사용하여 Websocket / API 서버 개발</li>
+                <li>
+                  Netty framework 와 Springboot 사용하여 Websocket / API 서버
+                  개발
+                </li>
                 <li>Websocket 사용하여 Smart sensor 장비와 서버 소통</li>
-                <li>장비 데이터 그래프 형식으로 표출하는 대시보드 페이지 개발</li>
+                <li>
+                  장비 데이터 그래프 형식으로 표출하는 대시보드 페이지 개발
+                </li>
               </ul>
             </article>
             <article class="dark:!border-neutral-600">
@@ -262,8 +312,8 @@
         </section>
       </main>
 
-      <footer>
-        <span>&copy; 2023 Created by dev-jake</span>
+      <footer class="flex items-center justify-center p-4 border-t">
+        <span class="text-gradient">&copy; 2023 Created by dev-jake</span>
       </footer>
     </div>
 

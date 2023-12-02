@@ -4,46 +4,41 @@ type TypingData = {
 }[][];
 
 function colorSchemeControl() {
-  const IS_ACTIVE = "js-is-active";
-  const container = document.querySelector(".js-color-scheme");
-  const sun = document.querySelector(".fa-sun");
-  const moon = document.querySelector(".fa-moon");
-  const elements = document.querySelectorAll("[class*='dark:']");
-  const classList: string[][] = Array.from(elements).map((el) =>
-    Array.from(el.classList).filter((c) => c.includes("dark:"))
-  );
+  // const COLOR_SCHEME = 'color-scheme-dark';
+  const IS_ACTIVE = 'js-is-active';
+  const container = document.querySelector('.js-color-scheme');
+  const sun = document.querySelector('.fa-sun');
+  const moon = document.querySelector('.fa-moon');
 
-  container?.addEventListener("click", (ev) => {
+  container?.addEventListener('click', (ev) => {
     if (ev?.target instanceof Element) {
-      if (ev.target.classList.contains("fa-sun")) {
+      if (ev.target.classList.contains('fa-sun')) {
         sun?.classList.add(IS_ACTIVE);
         moon?.classList.remove(IS_ACTIVE);
-        elements.forEach((el, i) => el.classList.remove(...classList[i]));
+        document.documentElement.classList.remove('dark');
         return;
       }
 
-      if (ev.target.classList.contains("fa-moon")) {
+      if (ev.target.classList.contains('fa-moon')) {
         moon?.classList.add(IS_ACTIVE);
         sun?.classList.remove(IS_ACTIVE);
-        elements.forEach((el, i) => el.classList.add(...classList[i]));
+        document.documentElement.classList.add('dark');
         return;
       }
     }
   });
 
-  window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)")
+  window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)')
     ? moon?.classList.add(IS_ACTIVE)
     : sun?.classList.add(IS_ACTIVE);
 }
 
 function addTransition() {
-  const IS_SHOWN = "js-is-shown";
+  const IS_SHOWN = 'js-is-shown';
   const sectionList = document.querySelectorAll(
-    "main > section > div > article"
+    'main > section > div > article'
   );
-  sectionList.forEach((el) =>
-    el.classList.add("transition", "duration-[1.25s]", "opacity-0")
-  );
+  sectionList.forEach((el) => el.classList.add('opacity-0'));
 
   const obs = new IntersectionObserver(
     (entries) => {
@@ -60,16 +55,16 @@ function addTransition() {
 }
 
 function addEventsForMobile() {
-  const desc = document.querySelector(".js-header-block-desc");
-  const caret: HTMLElement = document.querySelector(".js-header-icon-caret")!;
+  const desc = document.querySelector('.js-header-block-desc');
+  const caret: HTMLElement = document.querySelector('.js-header-icon-caret')!;
 
-  const HIDE = "js-hide";
-  const ROTATE = "js-rotate";
+  const HIDE = 'js-hide';
+  const ROTATE = 'js-rotate';
   const listener = () => {
     desc?.classList.toggle(HIDE);
     caret?.classList.toggle(ROTATE);
   };
-  caret?.addEventListener("click", listener);
+  caret?.addEventListener('click', listener);
 
   caret?.click();
 }
@@ -78,30 +73,30 @@ function addTypingEffect() {
   const typingData = [
     [
       {
-        colData: ["html", "&", "css"],
+        colData: ['html', '&', 'css'],
         emphasis: [0],
       },
     ],
     [
       {
-        colData: ["react"],
+        colData: ['react'],
         emphasis: [0],
       },
     ],
     [
       {
-        colData: ["vue"],
+        colData: ['vue'],
         emphasis: [0],
       },
     ],
     [
       {
-        colData: ["angular"],
+        colData: ['angular'],
         emphasis: [0],
       },
     ],
   ];
-  typingEffect(document.querySelector(".js-typing-container")!, typingData);
+  typingEffect(document.querySelector('.js-typing-container')!, typingData);
 }
 
 function addEfectsToProjects() {}
@@ -113,12 +108,12 @@ addTypingEffect();
 addEfectsToProjects();
 
 function typingEffect(container: Element, typingData: TypingData) {
-  const ROW_CLASS = "js-typing-row";
-  const COL_CLASS = "js-typing-col";
-  const CURSOR_CLASS = "js-typing-cursor";
-  const EMPHASIS = "emphasis";
-  const BLINK = "animate-blink";
-  const SPACE = "\u00a0";
+  const ROW_CLASS = 'js-typing-row';
+  const COL_CLASS = 'js-typing-col';
+  const CURSOR_CLASS = 'js-typing-cursor';
+  const EMPHASIS = 'emphasis';
+  const BLINK = 'animate-blink';
+  const SPACE = '\u00a0';
   const REG_EXP = /(\s*)/g;
   const TYPE_SPEED = 100;
   const ERASE_SPEED = 25;
@@ -129,7 +124,7 @@ function typingEffect(container: Element, typingData: TypingData) {
     container.textContent = container.textContent.trim();
   }
 
-  const cursor = document.createElement("span");
+  const cursor = document.createElement('span');
   cursor.classList.add(CURSOR_CLASS, BLINK);
   cursor.append(SPACE);
   container.appendChild(cursor);
@@ -137,7 +132,7 @@ function typingEffect(container: Element, typingData: TypingData) {
   let idx = 0;
   function start() {
     // to start erasing when container is empty
-    if (container.textContent?.replace(REG_EXP, "")) {
+    if (container.textContent?.replace(REG_EXP, '')) {
       setTimeout(() => {
         erase().then(() => {
           start();
@@ -146,7 +141,7 @@ function typingEffect(container: Element, typingData: TypingData) {
     }
 
     // to start typing when container is not empty
-    if (!container.textContent?.replace(REG_EXP, "")) {
+    if (!container.textContent?.replace(REG_EXP, '')) {
       setTimeout(() => {
         type(typingData[idx++]).then(() => {
           start();
@@ -160,36 +155,36 @@ function typingEffect(container: Element, typingData: TypingData) {
 
   function erase() {
     return new Promise((resolve) => {
-      if (!document.querySelectorAll("." + ROW_CLASS).length) {
+      if (!document.querySelectorAll('.' + ROW_CLASS).length) {
         if (container.textContent) {
           typingData.push([
             { colData: [container.textContent.trim()], emphasis: [] },
           ]);
 
-          const nr = document.createElement("div");
+          const nr = document.createElement('div');
           nr.classList.add(ROW_CLASS);
-          const nc = document.createElement("span");
+          const nc = document.createElement('span');
           nc.classList.add(COL_CLASS);
           nc.append(container.textContent.trim());
           nr.appendChild(nc);
           nr.appendChild(cursor);
 
-          container.textContent = "";
+          container.textContent = '';
           container.appendChild(nr);
         }
       }
       // remove blink animation to cursor
       cursor.classList.remove(BLINK);
 
-      const rows = document.querySelectorAll("." + ROW_CLASS);
-      const cols = document.querySelectorAll("." + COL_CLASS);
+      const rows = document.querySelectorAll('.' + ROW_CLASS);
+      const cols = document.querySelectorAll('.' + COL_CLASS);
 
       let r = rows.length - 1;
       let c = cols.length - 1;
       function loop() {
         setTimeout(() => {
           // move cursor to row above
-          if (!rows[r].querySelectorAll("." + COL_CLASS)[0].textContent) {
+          if (!rows[r].querySelectorAll('.' + COL_CLASS)[0].textContent) {
             rows[--r].appendChild(cursor);
           }
 
@@ -228,16 +223,16 @@ function typingEffect(container: Element, typingData: TypingData) {
 
   function type(data = typingData[0]) {
     return new Promise((resolve) => {
-      if (document.querySelectorAll("." + ROW_CLASS).length) {
-        document.querySelectorAll("." + ROW_CLASS).forEach((e) => e.remove());
+      if (document.querySelectorAll('.' + ROW_CLASS).length) {
+        document.querySelectorAll('.' + ROW_CLASS).forEach((e) => e.remove());
       }
 
       data.forEach((d) => {
-        const nr = document.createElement("div");
+        const nr = document.createElement('div');
         nr.classList.add(ROW_CLASS);
         container.appendChild(nr);
         d.colData.forEach((_, i) => {
-          const nc = document.createElement("span");
+          const nc = document.createElement('span');
           nc.classList.add(COL_CLASS);
           if (d.emphasis.includes(i)) nc.classList.add(EMPHASIS);
           nr.appendChild(nc);
@@ -257,25 +252,25 @@ function typingEffect(container: Element, typingData: TypingData) {
         }
 
         setTimeout(() => {
-          const row = document.querySelectorAll("." + ROW_CLASS)[r];
-          const col = row.querySelectorAll("." + COL_CLASS)[c];
+          const row = document.querySelectorAll('.' + ROW_CLASS)[r];
+          const col = row.querySelectorAll('.' + COL_CLASS)[c];
 
           col.classList.contains(EMPHASIS)
             ? cursor.classList.add(EMPHASIS)
             : cursor.classList.remove(EMPHASIS);
 
           row.appendChild(cursor);
-          col.textContent += data[r]["colData"][c][i];
+          col.textContent += data[r]['colData'][c][i];
 
           i++;
 
-          if (col.textContent!.replace(REG_EXP, "") === data[r]["colData"][c]) {
+          if (col.textContent!.replace(REG_EXP, '') === data[r]['colData'][c]) {
             col.append(SPACE);
             c++;
             i = 0;
           }
 
-          if (c === data[r]["colData"].length) {
+          if (c === data[r]['colData'].length) {
             r++;
             c = 0;
           }

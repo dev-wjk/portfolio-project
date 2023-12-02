@@ -44,17 +44,11 @@
   @apply bg-gradient-to-br from-rose-500 to-current;
 }
 
-.body-container {
-  @apply lg:px-8 lg:pt-8 transition;
-}
-
-article.js-is-shown {
+.js-is-shown {
   @apply !opacity-100;
 }
 
 header {
-  @apply container mx-auto p-4 lg:mb-8;
-
   .js-hide {
     @apply !h-0 lg:!h-max;
   }
@@ -78,76 +72,10 @@ header {
   .js-typing-cursor {
     @apply absolute inline-block w-[2px] bg-rose-500 leading-tight text-3xl;
   }
-}
 
-header > div:nth-child(1) {
-  @apply mb-8 text-center flex items-center justify-end gap-2 lg:justify-center xl:mb-0;
-
-  i {
-    @apply text-current transition;
-
-    &.js-is-active {
-      @apply text-gradient;
-    }
+  .js-is-active {
+    @apply text-gradient;
   }
-}
-
-header > div:nth-child(2) {
-  @apply lg:grid lg:grid-flow-col lg:grid-cols-2 xl:h-[80vh];
-
-  h1 {
-    @apply animate-expand mb-4 lg:flex lg:flex-col lg:justify-center lg:items-center;
-
-    span {
-      @apply whitespace-nowrap;
-    }
-
-    a {
-      @apply font-normal underline;
-    }
-
-    b {
-      @apply font-normal font-mono text-3xl text-gradient;
-    }
-  }
-
-  section {
-    @apply relative xl:flex xl:flex-col xl:justify-center;
-
-    div:first-child {
-      @apply flex flex-col gap-2 h-[300px] overflow-y-scroll transition-[height] duration-300 scrollbar-hide lg:h-max;
-
-      p {
-        @apply leading-tight;
-        b {
-          @apply font-normal;
-        }
-        a {
-          @apply font-normal underline;
-        }
-      }
-    }
-
-    div:nth-child(2) {
-      @apply border-t-2 w-full border-rose-500 lg:mt-4;
-
-      i {
-        @apply absolute bottom-0 left-1/2 -translate-x-1/2 animate-blink2 transition lg:hidden;
-      }
-    }
-
-    div:last-child {
-      @apply flex items-center justify-end gap-1 lg:justify-start;
-
-      i {
-        @apply my-1 bg-slate-700 rounded-lg text-slate-100 transition;
-      }
-    }
-  }
-}
-
-main {
-  @apply container p-4 mx-auto;
 }
 
 main > section {
@@ -156,11 +84,13 @@ main > section {
   h2 {
     @apply mb-4 border-b border-rose-500;
   }
+
+  article {
+    @apply transition duration-1000;
+  }
 }
 
 .projects-container > div {
-  @apply flex gap-4 flex-wrap;
-
   article {
     @apply relative w-full h-[300px] rounded-xl bg-no-repeat bg-cover bg-left-top lg:h-[500px];
 
@@ -192,13 +122,9 @@ main > section {
   }
 }
 
-.resume-container {
-  & > div {
-    @apply grid grid-flow-row gap-4 lg:grid-cols-2;
-  }
-
+.resume-container > div {
   article {
-    @apply border rounded-xl p-4 transition;
+    @apply border rounded-xl p-4 transition duration-1000;
 
     & > div:nth-of-type(1) {
       @apply mb-4 leading-tight;
@@ -219,12 +145,5 @@ main > section {
     ul {
       @apply list-disc pl-4;
     }
-  }
-}
-
-footer {
-  @apply flex items-center justify-center p-4 border-t;
-  span {
-    @apply text-gradient;
   }
 }
