@@ -4,7 +4,6 @@ type TypingData = {
 }[][];
 
 function colorSchemeControl() {
-  // const COLOR_SCHEME = 'color-scheme-dark';
   const IS_ACTIVE = 'js-is-active';
   const container = document.querySelector('.js-color-scheme');
   const sun = document.querySelector('.fa-sun');
